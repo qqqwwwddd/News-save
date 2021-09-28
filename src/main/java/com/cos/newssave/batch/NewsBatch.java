@@ -20,10 +20,10 @@ public class NewsBatch {
 	
 	// 초 분 시 일 월 주
 	// @Scheduled(cron = "0 2 * * * *", zone = "Asia/Seoul") // 특정시간 동작
-	@Scheduled(fixedDelay=1000*60*2)
+	@Scheduled(fixedDelay=1000*60*1)
 	public void newsCrawAndSave() {
 	
-		List<News> newsList = naverCraw.collect10();
+		List<News> newsList = naverCraw.collect2();
 		
 		newsRepository.saveAll(newsList);
 	}
